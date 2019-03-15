@@ -7,3 +7,16 @@ body {
     padding: 0;
 }
 
+#pac-input {
+    width: 100%;
+}
+
+button {
+    width: 100%;
+}
+
+.weather-icon,
+.weather,
+.temperature {
+    padding: 10px;
+}
