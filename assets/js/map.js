@@ -38,14 +38,10 @@ function initMap() {
 // zoom the map in on the city.
 function onPlaceChanged() {
     var place = autocomplete.getPlace();
-    if (place.geometry) {
-        map.panTo(place.geometry.location);
-        map.setZoom(15);
-        search();
-    }
-    else {
-        document.getElementById('place-input').placeholder = 'Enter a city';
-    }
+    (place.geometry)
+    map.panTo(place.geometry.location);
+    map.setZoom(15);
+    search();
 }
 
 // Search for hotels in the selected city, within the viewport of the map.

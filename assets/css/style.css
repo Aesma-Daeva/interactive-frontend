@@ -14,10 +14,11 @@ body {
 
 p {
     font-size: 1em;
-    font-weight:600;
+    font-weight: 600;
 }
 
 /*===Weather===*/
+
 button {
     width: 100%;
     height: 100%;
@@ -25,7 +26,6 @@ button {
 
 .weather-icon,
 .weather,
-.weather-description,
 .temperature {
     padding: 0 5px;
 }
@@ -69,11 +69,11 @@ button {
 
 .iw_attribute_name {
     font-weight: bold;
-    text-align: right;
+    text-align: left;
 }
 
 .iw_table_icon {
-    text-align: right;
+    text-align: center;
 }
 
 .placeIcon {
