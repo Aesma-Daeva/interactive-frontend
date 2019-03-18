@@ -1,55 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <!-- CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css" />
 
-  <title>Interactive Frontend</title>
+    <title>Interactive Frontend</title>
 </head>
+
 <main>
-  <div class="container">
-    <h1>Where is your next escapade?</h1>
-    <div class="row">
-      <!-- Searchbox -->
-      <div class="col-md-6 col-sm-12 d-flex justify-content-center align-items-center p-1">
-        <input id="pac-input" class="controls" type="text" placeholder="Search box">
-      </div>
-      <!-- Buttons -->
-      <div class="col-md-3 col-sm-6 d-flex justify-content-center align-items-center p-1">
-        <button type="button" class="btn btn-info btn-sm" onclick="showWeather();">Show Weather</button>
-      </div>
-      <!-- Weather API -->
-      <div class="col-md-3 col-sm-6 d-flex justify-content-center align-items-center p-1">
-        <img class="weather-icon">
-        <p class="weather"></p>
-        <p class="temperature"></p>
-      </div>
+    <div class="container-fluid">
+        <h1>Where is your next escapade?</h1>
+        <div class="row">
+            <!-- Searchbox -->
+            <div class="col-md-9 col-sm-12 d-flex justify-content-center align-items-center pb-1">
+                <input id="place-input" class="controls" type="text" placeholder="Search box">
+            </div>
+            <!-- Buttons -->
+            <div class="col-md col-sm-6 d-flex justify-content-center align-items-center pb-1">
+                <button type="button" class="btn btn-info btn-sm" onclick="getWeather();">Show Weather</button>
+            </div>
+            <!-- Weather API -->
+            <!-- Only shows weather data once the "Show Weather" button is clicked-->
+            <div class="col-md-2 col-sm-6 d-flex justify-content-center align-items-center pb-1">
+                <img class="weather-icon">
+                <p class="weather"></p>
+                <p class="temperature"></p>
+            </div>
+        </div>
     </div>
-  </div>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <!--Map-->
+                <div class="col-md-9 pb-1">
+                    <div id="map"></div>
+                </div>
+                <!--Results-->
+                <!-- Only displays information once there is a place input and it auto-populates the table-->
+                <div class="col-md-3 pb-1">
+                    <div id="listing">
+                        <table id="resultsTable">
+                            <tbody id="results"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Info Window -->
+            <!-- Only displays information once there is a place input and user clicks on the marker -->
+            <div style="display: none">
+                <div id="info-content">
+                    <table>
+                        <tr id="iw-url-row" class="iw_table_row">
+                            <td id="iw-icon" class="iw_table_icon"></td>
+                            <td id="iw-url"></td>
+                        </tr>
+                        <tr id="iw-address-row" class="iw_table_row">
+                            <td class="iw_attribute_name">Address:</td>
+                            <td id="iw-address"></td>
+                        </tr>
+                        <tr id="iw-phone-row" class="iw_table_row">
+                            <td class="iw_attribute_name">Telephone:</td>
+                            <td id="iw-phone"></td>
+                        </tr>
+                        <tr id="iw-rating-row" class="iw_table_row">
+                            <td class="iw_attribute_name">Rating:</td>
+                            <td id="iw-rating"></td>
+                        </tr>
+                        <tr id="iw-website-row" class="iw_table_row">
+                            <td class="iw_attribute_name">Website:</td>
+                            <td id="iw-website"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Map -->
-  <div id="map"></div>
 
-  <!-- Bootstrap jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Bootstrap jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-  <!-- JavaScript -->
-  <script type="text/javascript" src="./assets/js/weather.js"></script>
-  <script type="text/javascript" src="./assets/js/map.js"></script>
-  <!-- Google API -->
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS6iGKgURPqYWfkWtCq0Iu6pLHtxneimM&libraries=places" async defer></script>
+    <!-- JavaScript -->
+    <script src="./assets/js/weather.js"></script>
+    <script src="./assets/js/map.js"></script>
+
+    <!-- Google API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAS6iGKgURPqYWfkWtCq0Iu6pLHtxneimM&libraries=places&callback=initMap" async></script>
 </main>
 
 </html>

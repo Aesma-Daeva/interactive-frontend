@@ -1,10 +1,14 @@
-//When Show Weather button is clicked, it runs Weather API
-//This API is limited to 60 calls per minute on free subscription so I don't 
-//want it to constantly run whenever the user searches for a place
+/*
+When Show Weather button is clicked, it runs the Weather API.
+This API is limited to 60 calls per minute on free subscription so I don't 
+want it to constantly run whenever the user searches for a place.
+Documentation: https://openweathermap.org/current
+*/
+
 function getWeather() {
     
     //Gets value from input form search box
-    var place = $("#pac-input").val();
+    var place = $("#place-input").val();
 
     $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=" + place + "&units=metric&appid=2fa012fec825afa1f975d94bb9232b3f", function(data) {
         //I want to keep this so data always shows in devtools console
@@ -17,7 +21,7 @@ function getWeather() {
         //Current Temperature in Celcius
         var temperature = Math.round(data.main.temp) + "&#8451;";
 
-        //Data shown in the app
+        //Data output
         $('.weather-icon').attr("src", weatherIcon);
         $('.weather').append(weather);
         $('.temperature').append(temperature);
