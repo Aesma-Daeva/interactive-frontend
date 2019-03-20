@@ -4,6 +4,7 @@ https://developers.google.com/maps/documentation/javascript/examples/places-auto
 */
 
 var map, places, infoWindow;
+let typeSelected = ""
 var markers = [];
 var autocomplete;
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
@@ -14,10 +15,6 @@ function initMap() {
         center: { lat: 34.881857, lng: 32.477719 },
         zoom: 3,
         mapTypeId: 'roadmap'
-    });
-
-    infoWindow = new google.maps.InfoWindow({
-        content: document.getElementById('info-content')
     });
 
     // Create the autocomplete object and associate it with the UI input control.
@@ -31,6 +28,10 @@ function initMap() {
     places = new google.maps.places.PlacesService(map);
 
     autocomplete.addListener('place_changed', onPlaceChanged);
+
+    infoWindow = new google.maps.InfoWindow({
+        content: document.getElementById('info-content')
+    });
 }
 
 
@@ -75,7 +76,7 @@ function search() {
         case 'attractions':
             var search = {
                 bounds: map.getBounds(),
-                types: ['point_of_interest']
+                types: ['museum' , 'park', 'zoo']
             };
             break;
         default:
