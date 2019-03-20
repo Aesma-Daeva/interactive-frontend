@@ -20,9 +20,10 @@
         <div class="row">
             <!-- Searchbox -->
             <div class="col-md-5 col-sm-12 d-flex justify-content-center align-items-center pb-1">
-                <input id="place-input" class="controls" type="text" placeholder="Search place">
+                <input id="place-input" class="controls" type="text" placeholder="Type the city that you want to visit">
             </div>
-
+            
+            <!-- Map Place Type Selection -->
             <div class="col-md-2 col-sm-3 d-flex justify-content-center align-items-center pb-1">
                 <select id="typeSelect" onchange="search()">
                   <option value="lodging">Accommodation</option>
@@ -33,16 +34,12 @@
                 </select>
             </div>
 
-            <!--Buttons -->
+            <!--Weather Button -->
             <div class="col-md-2 col-sm-3 d-flex justify-content-center align-items-center pb-1">
-                <button type="button" class="btn btn-info btn-sm" onclick="getWeather();">Show Weather</button>
+                <button type="button" class="btn btn-outline-primary btn-sm" onclick="getWeather();">Show Weather</button>
             </div>
 
-            <!--<div class="col-md col-sm-3 d-flex justify-content-center align-items-center pb-1">-->
-            <!--    <button type="button" class="btn btn-info btn-sm" onclick="clearWeatherData();">Clear Weather</button>-->
-            <!--</div>-->
-
-            <!-- Weather API -->
+            <!-- Show Weather -->
             <!-- Only shows weather data once the "Show Weather" button is clicked-->
             <div class="col-md-2 offset-md-1 col-sm-3 d-flex justify-content-center align-items-center pb-1" id="weatherData">
                 <img class="weather-icon">
@@ -52,9 +49,9 @@
         </div>
     </div>
     <section>
+        <!--Map-->
         <div class="container-fluid">
             <div class="row">
-                <!--Map-->
                 <div class="col-md-9 pb-1">
                     <div id="map"></div>
                 </div>

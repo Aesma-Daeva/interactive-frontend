@@ -1,6 +1,6 @@
 /*
 When Show Weather button is clicked, it runs the Weather API.
-This API is limited to 60 calls per minute on free subscription so I don't 
+This API is limited to 60 calls per minute on free subscription so I don't
 want it to constantly run whenever the user searches for a place.
 Documentation: https://openweathermap.org/current
 */
@@ -22,16 +22,9 @@ function getWeather() {
         var temperature = Math.round(data.main.temp) + "&#8451;";
 
         //Data output
-        $('.weather-icon').attr("src", weatherIcon);
-        $('.weather').append(weather);
-        $('.temperature').append(temperature);
+        $(".weather-icon").attr("src", weatherIcon);
+        $(".weather").append(weather);
+        $(".temperature").append(temperature);
 
     });
-};
-
-// function clearWeatherData() {
-//     var weatherData = document.getElementById('weatherData');
-//     while (weatherData.childNodes[0]) {
-//         weatherData.removeChild(weatherData.childNodes[0]);
-//     };
-// }
+}
