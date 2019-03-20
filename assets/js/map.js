@@ -46,10 +46,42 @@ function onPlaceChanged() {
 
 // Search for hotels in the selected city, within the viewport of the map.
 function search() {
-    var search = {
-        bounds: map.getBounds(),
-        types: ['lodging']
-    };
+
+    switch (document.getElementById("typeSelect").value) {
+        case 'lodging':
+            var search = {
+                bounds: map.getBounds(),
+                types: ['lodging']
+            };
+            break;
+        case 'bar':
+            var search = {
+                bounds: map.getBounds(),
+                types: ['bar', 'cafe']
+            };
+            break;
+        case 'restaurant':
+            var search = {
+                bounds: map.getBounds(),
+                types: ['restaurant', 'bakery', 'meal_delivery', 'meal_takeaway']
+            };
+            break;
+        case 'store':
+            var search = {
+                bounds: map.getBounds(),
+                types: ['clothing_store', 'convenience_store', 'department_store', 'liquor_store', 'shopping_mall', 'supermarket']
+            };
+            break;
+        case 'attractions':
+            var search = {
+                bounds: map.getBounds(),
+                types: ['point_of_interest']
+            };
+            break;
+        default:
+            text = "Nothing to display";
+    }
+
 
     places.nearbySearch(search, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {

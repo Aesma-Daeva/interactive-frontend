@@ -19,16 +19,32 @@
         <h1>Where is your next escapade?</h1>
         <div class="row">
             <!-- Searchbox -->
-            <div class="col-md-9 col-sm-12 d-flex justify-content-center align-items-center pb-1">
+            <div class="col-md-5 col-sm-12 d-flex justify-content-center align-items-center pb-1">
                 <input id="place-input" class="controls" type="text" placeholder="Search place">
             </div>
-            <!-- Buttons -->
-            <div class="col-md col-sm-6 d-flex justify-content-center align-items-center pb-1">
+
+            <div class="col-md-2 col-sm-3 d-flex justify-content-center align-items-center pb-1">
+                <select id="typeSelect" onchange="search()">
+                  <option value="lodging">Accommodation</option>
+                  <option value="bar">Bar</option>
+                  <option value="restaurant">Restaurant</option>
+                  <option value="store">Store</option>
+                  <option value="attractions">Attractions</option>
+                </select>
+            </div>
+
+            <!--Buttons -->
+            <div class="col-md-2 col-sm-3 d-flex justify-content-center align-items-center pb-1">
                 <button type="button" class="btn btn-info btn-sm" onclick="getWeather();">Show Weather</button>
             </div>
+
+            <!--<div class="col-md col-sm-3 d-flex justify-content-center align-items-center pb-1">-->
+            <!--    <button type="button" class="btn btn-info btn-sm" onclick="clearWeatherData();">Clear Weather</button>-->
+            <!--</div>-->
+
             <!-- Weather API -->
             <!-- Only shows weather data once the "Show Weather" button is clicked-->
-            <div class="col-md-2 col-sm-6 d-flex justify-content-center align-items-center pb-1">
+            <div class="col-md-2 offset-md-1 col-sm-3 d-flex justify-content-center align-items-center pb-1" id="weatherData">
                 <img class="weather-icon">
                 <p class="weather"></p>
                 <p class="temperature"></p>
@@ -52,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Info Window -->
             <!-- Only displays information once there is a place input and user clicks on the marker -->
             <div style="display: none">
