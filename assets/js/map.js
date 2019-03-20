@@ -3,10 +3,8 @@ The script is from official Google API Docs that I edited according to what I ne
 https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-hotelsearch
 */
 
-var map, places, infoWindow;
-let typeSelected = ""
+var map, places, infoWindow,  autocomplete;
 var markers = [];
-var autocomplete;
 var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
 var hostnameRegexp = new RegExp('^https?://.+?/');
 
@@ -47,43 +45,12 @@ function onPlaceChanged() {
 
 // Search for hotels in the selected city, within the viewport of the map.
 function search() {
-
-    switch (document.getElementById("typeSelect").value) {
-        case 'lodging':
-            var search = {
-                bounds: map.getBounds(),
-                types: ['lodging']
-            };
-            break;
-        case 'bar':
-            var search = {
-                bounds: map.getBounds(),
-                types: ['bar', 'cafe']
-            };
-            break;
-        case 'restaurant':
-            var search = {
-                bounds: map.getBounds(),
-                types: ['restaurant', 'bakery', 'meal_delivery', 'meal_takeaway']
-            };
-            break;
-        case 'store':
-            var search = {
-                bounds: map.getBounds(),
-                types: ['clothing_store', 'convenience_store', 'department_store', 'liquor_store', 'shopping_mall', 'supermarket']
-            };
-            break;
-        case 'attractions':
-            var search = {
-                bounds: map.getBounds(),
-                types: ['museum' , 'park', 'zoo']
-            };
-            break;
-        default:
-            text = "Nothing to display";
-    }
-
-
+    
+    let search = {
+        bounds: map.getBounds(),
+        types: [document.getElementById("typeSelect").value]
+    };
+    
     places.nearbySearch(search, function(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
             clearResults();
