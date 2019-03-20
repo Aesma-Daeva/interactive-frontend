@@ -23,15 +23,20 @@
                 <input id="place-input" class="controls" type="text" placeholder="Type the city that you want to visit">
             </div>
             
-            <!-- Map Place Type Selection -->
-            <div class="col-md-2 col-sm-3 d-flex justify-content-center align-items-center pb-1">
-                <select id="typeSelect" onchange="search()">
-                  <option value="lodging">Accommodation</option>
-                  <option value="bar">Bar</option>
-                  <option value="restaurant">Restaurant</option>
-                  <option value="store">Store</option>
-                  <option value="museum">Attractions</option>
-                </select>
+            <!-- Select Form for Map -->
+            <!-- Search for Hotel, Attraction, Bar, Restaurant or Store -->
+            <div class="input-group col-md-2 col-sm-3 d-flex justify-content-center align-items-center pb-1">
+                <div class="input-group-prepend">
+                    <label class="input-group-text">Find:</label>
+                </div>
+                <select class="custom-select" id="typeSelect" onchange="search()">
+                    <option value="lodging" selected>Accommodation</option>
+                    <option value="museum">Attractions</option>
+                    <option value="bar">Bar</option>
+                    <option value="restaurant">Restaurant</option>
+                    <option value="store">Store</option>
+                    <option value="transit_station">Transportation</option>
+                 </select>
             </div>
 
             <!--Weather Button -->
@@ -41,7 +46,7 @@
 
             <!-- Show Weather -->
             <!-- Only shows weather data once the "Show Weather" button is clicked-->
-            <div class="col-md-2 offset-md-1 col-sm-3 d-flex justify-content-center align-items-center pb-1" id="weatherData">
+            <div class="col-md-2 col-sm-3 d-flex justify-content-center align-items-center pb-1" id="weatherData">
                 <img class="weather-icon">
                 <p class="weather"></p>
                 <p class="temperature"></p>

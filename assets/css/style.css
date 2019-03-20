@@ -86,3 +86,8 @@ button {
     width: 24px;
     height: 24px;
 }
+
+/*===Select Form===*/
+#typeSelect {
+    height: 100%;
+}
