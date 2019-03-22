@@ -22,9 +22,10 @@ function getWeather() {
         var temperature = Math.round(data.main.temp) + "&#8451;";
 
         //Data output
-        $(".weather-icon").attr("src", weatherIcon);
-        $(".weather").append(weather);
-        $(".temperature").append(temperature);
+
+        $(".weather-icon").empty().attr("src", weatherIcon);
+        $(".weather").empty().append(weather);
+        $(".temperature").empty().append(temperature);
 
     });
 }
