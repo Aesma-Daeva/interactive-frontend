@@ -9,7 +9,6 @@ function getWeather() {
     //Gets value from input form search box
     var place = $("#place-input").val();
 
-
     $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=" + place + "&units=metric&appid=2fa012fec825afa1f975d94bb9232b3f", function displayWeather(data) {
         //I want to keep this so data always shows in devtools console
         console.log(data);
@@ -23,9 +22,12 @@ function getWeather() {
 
         //Data output
 
-        $(".weather-icon").empty().attr("src", weatherIcon);
-        $(".weather").empty().append(weather);
-        $(".temperature").empty().append(temperature);
+        $(".weatherIcon").attr("src", weatherIcon).fadeIn(2000);
+        $(".weather").append(weather).fadeIn(2000);
+        $(".temperature").append(temperature).fadeIn(2000);
+    });
 
+    $("#place-input").keypress(function clearWeatherOutput() {
+        $("#weatherData").children().empty().fadeOut(2000);
     });
 }
