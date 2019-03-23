@@ -7,6 +7,8 @@ var map;
 var places;
 var infoWindow;
 var autocomplete;
+var customIcon;
+var typeSelected = document.getElementById("typeSelect").value;
 var markers = [];
 var MARKER_PATH = "https://developers.google.com/maps/documentation/javascript/images/marker_green";
 var hostnameRegexp = new RegExp("^https?://.+?/");
@@ -53,9 +55,11 @@ function onPlaceChanged() {
 //within the viewport of the map.
 function search() {
 
+    var typeSelected = document.getElementById("typeSelect").value;
+
     let search = {
         bounds: map.getBounds(),
-        types: [document.getElementById("typeSelect").value]
+        types: [typeSelected]
     };
 
     places.nearbySearch(search, function(results, status) {
@@ -65,13 +69,31 @@ function search() {
             //Create a marker for each hotel, bar, etc found and
             //assign a letter of the alphabet to each marker icon.
             for (var i = 0; i < results.length; i++) {
-                var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-                var markerIcon = MARKER_PATH + markerLetter + '.png';
+                if (typeSelected == "lodging") {
+                    customIcon = "./assets/images/icons/accommodationIcon.png"
+                }
+                else if (typeSelected == "museum") {
+                    customIcon = "./assets/images/icons/attractionsIcon.png"
+                }
+                else if (typeSelected == "bar") {
+                    customIcon = "./assets/images/icons/barIcon.png"
+                }
+                else if (typeSelected == "restaurant") {
+                    customIcon = "./assets/images/icons/restaurantIcon.png"
+                }
+                else if (typeSelected == "store") {
+                    customIcon = "./assets/images/icons/storeIcon.png"
+                }
+                else if (typeSelected == "transit_station") {
+                    customIcon = "./assets/images/icons/transportationIcon.png"
+                }
                 //Use marker animation to drop the icons incrementally on the map.
                 markers[i] = new google.maps.Marker({
                     position: results[i].geometry.location,
                     animation: google.maps.Animation.DROP,
-                    icon: markerIcon
+                    icon: {
+                        url: customIcon
+                    }
                 });
                 //If the user clicks a hotel, bar etc. marker, show the details 
                 //of that in an info window.
