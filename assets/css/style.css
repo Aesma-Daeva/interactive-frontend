@@ -7,14 +7,22 @@ body {
     font-size: 100%;
 }
 
+p {
+    font-size: 1.125em;
+    font-weight: 600;
+    color: #007bff;
+}
+
 #place-input {
     width: 100%;
     height: 100%;
+    font-size: 1.25em;
+    border: 1px solid #007bff;
 }
 
-p {
-    font-size: 1em;
-    font-weight: 600;
+#place-input::placeholder {
+    color: #007bff;
+    font-style: italic;
 }
 
 /*===Weather===*/
@@ -28,6 +36,10 @@ button {
 .weather,
 .temperature {
     padding: 0 5px;
+}
+
+.weatherButton {
+    font-size: 1.125em;
 }
 
 /*===Map===*/
@@ -88,6 +100,62 @@ button {
 }
 
 /*===Select Form===*/
+
 #typeSelect {
     height: 100%;
+    border: 1px solid #007bff;
+    color: #007bff;
+    font-weight: 500;
+}
+
+.input-group-text {
+    color: #000000;
+    background-color: #b3d7ff;
+    border: 1px solid #007bff;
+}
+
+/*===Media Queries===*/
+
+/*--iPad Pro--*/
+
+@media only screen and (max-device-width: 1366px) {
+    /*--Styles--*/
+    #place-input {
+        font-size: 1.5em;
+    }
+}
+
+/*--iPad--*/
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    /*--Styles--*/
+    #place-input {
+        font-size: 1.5em;
+    }
+}
+
+/*--iPhone X--*/
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) {
+    /*--Styles--*/
+    #place-input {
+        font-size: 1.25em;
+    }
+}
+
+/*--Samsung Galaxy S5--*/
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) {
+    /*--Styles--*/
+    #place-input {
+        font-size: 1em;
+    }
+
+    #typeSelect {
+        font-size: .75em;
+    }
+
+    .weatherButton {
+        font-size: 0.75em;
+    }
 }
