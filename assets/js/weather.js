@@ -29,7 +29,7 @@ $("#weatherButton").click(function() {
         .fail(function(jqxhr, textStatus, error) {
             console.log(textStatus, error)
 
-            $("<p>Weather Status: Unpredictable! \n The weather information is still brewing for that place.</p>").addClass("weatherError").prependTo("#weatherData");
+            $("<p>Weather Status: Unpredictable! The weather information is still brewing for that place.</p>").addClass("weatherError").prependTo("#weatherData");
         });
 
     $("#place-input").keypress(function clearWeatherOutput() {
