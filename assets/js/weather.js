@@ -8,9 +8,10 @@ $("#weatherButton").click(function() {
     //Gets value from input form search box
     var place = $("#place-input").val();
 
-    $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=" + place + "&units=metric&appid=2fa012fec825afa1f975d94bb9232b3f", function(data, status) {
-        console.log(data, status)
-        if (status == "success") {
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=" + place + "&units=metric&appid=2fa012fec825afa1f975d94bb9232b3f", )
+        .done(function(data, status) {
+            console.log(data, status);
+
             //Weather Icon
             var weatherIcon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
             //Weather Name
@@ -23,11 +24,13 @@ $("#weatherButton").click(function() {
             $(".weatherIcon").attr("src", weatherIcon).fadeIn(2000);
             $(".weather").append(weather).fadeIn(2000);
             $(".temperature").append(temperature).fadeIn(2000);
-        }
-        else {
-            $("#weatherData").prepend("<p>We couldn't find that city. It must have blown off the map!</p>");
-        }
-    });
+        })
+
+        .fail(function(jqxhr, textStatus, error) {
+            console.log(textStatus, error)
+
+            $("<p>Weather Status: Unpredictable! \n The weather information is still brewing for that place.</p>").addClass("weatherError").prependTo("#weatherData");
+        });
 
     $("#place-input").keypress(function clearWeatherOutput() {
         $("#weatherData").children().empty().fadeOut(2000);

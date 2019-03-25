@@ -60,6 +60,11 @@ p {
     padding: 0 5px;
 }
 
+.weatherError {
+    font-size:0.75rem;
+    text-align: center;
+}
+
 /*===Map===*/
 
 #map {
