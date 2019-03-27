@@ -17,22 +17,22 @@ $("#weatherButton").click(function() {
             //Weather Name
             var weather = data.weather[0].main;
             //Current Temperature in Celcius
-            var temperature = Math.round(data.main.temp) + "&#8451;";
+            var temperature = Math.round(data.main.temp) + "℃ ";
+
 
             //Data output
-
             $(".weatherIcon").attr("src", weatherIcon).fadeIn(2000);
-            $(".weather").append(weather).fadeIn(2000);
-            $(".temperature").append(temperature).fadeIn(2000);
+            $(".weather").text(weather).fadeIn(2000);
+            $(".temperature").text(temperature).fadeIn(2000);
         })
 
         .fail(function(jqxhr, textStatus, error) {
             console.log(textStatus, error)
 
-            $("<p>Weather Status: Unpredictable! The weather information is still brewing for that place.</p>").addClass("weatherError").prependTo("#weatherData");
+            $("<p>Weather Status: Unpredictable! The weather information is still brewing for that place.</p>").addClass("weatherError").prependTo("#weatherData").fadeOut(4000);
         });
 
     $("#place-input").keypress(function clearWeatherOutput() {
-        $("#weatherData").children().empty().fadeOut(2000);
+        $("#weatherData").children().fadeOut(2000).empty();
     });
 });
