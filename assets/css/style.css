@@ -20,10 +20,11 @@ p {
     width: 100%;
     height: 100%;
     font-size: 1.25rem;
-    border: 1px solid #000000;
+    border: 1px solid #8900FF;
 }
 
 #place-input::placeholder {
+    color: #8900FF;
     font-style: italic;
 }
 
@@ -35,11 +36,13 @@ p {
     font-size: 1.125rem;
     font-weight: 500;
     background-color: #ffffff;
+    color: #05dfc7;
+    border-color: #05dfc7;
 }
 
 #weatherButton:hover {
     color: #ffffff;
-    background-color: #000000;
+    background-color: #05dfc7;
 }
 
 .weather-icon,
@@ -116,22 +119,22 @@ p {
 
 #typeSelect {
     height: 100%;
-    border: 1px solid #000000;
-    color: #000000;
+    border: 1px solid #0099FF;
+    color: #0099FF;
     font-weight: 500;
+    font-family: 'FontAwesome', 'Lato';
     padding: 0;
 }
 
 #typeSelect:hover {
-    color: #ffffff;
-    background-color: #000000;
-    border: 1px solid #000000;
+    color: #0099FF;
+    border: 1px solid #0099FF;
 }
 
 .input-group-text {
     color: #ffffff;
-    background-color: #000000;
-    border: 1px solid #000000;
+    background-color: #b3d7ff;
+    border: 1px solid #0099FF;
 }
 
 /*===Media Queries===*/

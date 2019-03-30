@@ -5,7 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
-
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- CSS -->
@@ -32,7 +34,7 @@
                     <label class="input-group-text">Find:</label>
                 </div>
                 <select class="custom-select" id="typeSelect" onchange="search()">
-                    <option value="lodging" selected>Accommodation</option>
+                    <option value="lodging" selected>Accommodation &#xf236;</option>
                     <option value="museum">Attractions</option>
                     <option value="bar">Bar</option>
                     <option value="restaurant">Restaurant</option>
@@ -43,7 +45,7 @@
 
             <!--Weather Button -->
             <div class="col-md-2 col-sm-4 d-flex justify-content-center align-items-center pb-1">
-                <button type="button" class="btn btn-outline-dark btn-sm" id="weatherButton">Show Weather</button>
+                <button type="button" class="btn btn-outline btn-sm" id="weatherButton">Show Weather</button>
             </div>
 
             <!-- Show Weather -->
@@ -52,6 +54,7 @@
                 <img class="weatherIcon">
                 <p class="weather"></p>
                 <p class="temperature"></p>
+                <p class=".geometryLocation"></p>
             </div>
         </div>
     </div>

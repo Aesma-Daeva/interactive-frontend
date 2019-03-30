@@ -95,10 +95,11 @@ function search() {
                         url: customIcon
                     }
                 });
+
                 //If the user clicks a hotel, bar etc. marker, show the details 
                 //of that in an info window.
                 markers[i].placeResult = results[i];
-                google.maps.event.addListener(markers[i], 'click', showInfoWindow, );
+                google.maps.event.addListener(markers[i], 'click', showInfoWindow);
                 setTimeout(dropMarker(i), i * 100);
                 addResult(results[i], i);
             }
@@ -127,7 +128,7 @@ function addResult(result, i) {
     var markerIcon = MARKER_PATH + markerLetter + '.png';
 
     var tr = document.createElement('tr');
-    tr.style.backgroundColor = (i % 2 === 0 ? '#F5F5F5' : '#FFFFFF');
+    tr.style.backgroundColor = (i % 2 === 0 ? '#00ff8e' : '#ffffff');
     tr.onclick = function() {
         google.maps.event.trigger(markers[i], 'click');
     };
@@ -157,6 +158,16 @@ function clearResults() {
 //anchored on the marker for the hotel or bar that the user selected.
 function showInfoWindow() {
     var marker = this;
+    
+    //Set bounce animation to marker
+    if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+    }
+    else {
+        marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+    
+    //Shows marker information
     places.getDetails({ placeId: marker.placeResult.place_id },
         function(place, status) {
             if (status !== google.maps.places.PlacesServiceStatus.OK) {

@@ -8,7 +8,7 @@ $("#weatherButton").click(function() {
     //Gets value from input form search box
     var place = $("#place-input").val();
 
-    $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=" + place + "&units=metric&appid=2fa012fec825afa1f975d94bb9232b3f", )
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?q=" + place + "&units=metric&appid=2fa012fec825afa1f975d94bb9232b3f")
         .done(function(data, status) {
             console.log(data, status);
 
