@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Montserrat:700,400|Roboto:400,100,300,500,900');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,600|Montserrat:400,500,600|Roboto:400,500');
 
 /*===Colors and Margins===*/
 
@@ -11,21 +11,33 @@ body {
     scroll-behavior: smooth;
 }
 
+h1 {
+    font-family: Montserrat;
+}
+
 p {
     font-size: 1.125rem;
     font-weight: 600;
+    font-family: Montserrat;
 }
 
 #place-input {
     width: 100%;
     height: 100%;
     font-size: 1.25rem;
+    font-weight: 500;
+    font-family: Roboto;
     border: 1px solid #8900FF;
+}
+
+#place-input:hover {
+    font-family: Montserrat;
+    font-style: italic;
 }
 
 #place-input::placeholder {
     color: #8900FF;
-    font-style: italic;
+    font-family: Lato;
 }
 
 /*===Weather===*/
@@ -34,7 +46,8 @@ p {
     width: 100%;
     height: 100%;
     font-size: 1.125rem;
-    font-weight: 500;
+    font-weight: 600;
+    font-family: Lato;
     background-color: #ffffff;
     color: #05dfc7;
     border-color: #05dfc7;
@@ -43,6 +56,7 @@ p {
 #weatherButton:hover {
     color: #ffffff;
     background-color: #05dfc7;
+    font-family: Roboto;
 }
 
 .weather-icon,
@@ -76,13 +90,20 @@ p {
     overflow: auto;
     cursor: pointer;
     overflow-x: hidden;
+    font-family: Lato;
+    font-weight: 400;
+}
+
+#results:hover {
+    font-family: Roboto;
+    font-weight: 500;
 }
 
 /*---Info Window---*/
 
 #info-content {
-    font-family: sans-serif;
-    font-weight: 600;
+    font-family: Roboto;
+    font-weight: 500;
     font-size: 1rem;
 }
 
@@ -122,19 +143,21 @@ p {
     border: 1px solid #0099FF;
     color: #0099FF;
     font-weight: 500;
-    font-family: 'FontAwesome', 'Lato';
+    font-family: Lato;
     padding: 0;
 }
 
 #typeSelect:hover {
     color: #0099FF;
     border: 1px solid #0099FF;
+    font-family: Montserrat;
 }
 
 .input-group-text {
     color: #ffffff;
     background-color: #b3d7ff;
     border: 1px solid #0099FF;
+    font-family: Roboto;
 }
 
 /*===Media Queries===*/
