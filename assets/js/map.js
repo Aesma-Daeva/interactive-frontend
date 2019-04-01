@@ -8,7 +8,6 @@ var places;
 var infoWindow;
 var autocomplete;
 var customIcon;
-var typeSelected = document.getElementById("typeSelect").value;
 var markers = [];
 var MARKER_PATH = "https://developers.google.com/maps/documentation/javascript/images/marker_green";
 var hostnameRegexp = new RegExp("^https?://.+?/");
@@ -16,10 +15,10 @@ var hostnameRegexp = new RegExp("^https?://.+?/");
 
 //Initial map shown on the webpage
 function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 34.881857, lng: 32.477719 },
         zoom: 3,
-        mapTypeId: 'roadmap'
+        mapTypeId: "roadmap"
     });
 
     //Create the autocomplete object and associate it with the UI input control.
@@ -27,15 +26,15 @@ function initMap() {
     autocomplete = new google.maps.places.Autocomplete(
         /** @type {!HTMLInputElement} */
         (
-            document.getElementById('place-input')), {
-            types: ['(cities)']
+            document.getElementById("place-input")), {
+            types: ["(cities)"]
         });
     places = new google.maps.places.PlacesService(map);
 
-    autocomplete.addListener('place_changed', onPlaceChanged);
+    autocomplete.addListener("place_changed", onPlaceChanged);
 
     infoWindow = new google.maps.InfoWindow({
-        content: document.getElementById('info-content')
+        content: document.getElementById("info-content")
     });
 }
 
@@ -51,13 +50,13 @@ function onPlaceChanged() {
     }
 }
 
-//Search for hotels, bars, restaurants, stores, museums in the selected city, 
+//Search for hotels, bars, restaurants, stores, museums in the selected city,
 //within the viewport of the map.
 function search() {
 
     var typeSelected = document.getElementById("typeSelect").value;
 
-    let search = {
+    var search = {
         bounds: map.getBounds(),
         types: [typeSelected]
     };
@@ -96,10 +95,10 @@ function search() {
                     }
                 });
 
-                //If the user clicks a hotel, bar etc. marker, show the details 
+                //If the user clicks a hotel, bar etc. marker, show the details
                 //of that in an info window.
                 markers[i].placeResult = results[i];
-                google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+                google.maps.event.addListener(markers[i], "click", showInfoWindow);
                 setTimeout(dropMarker(i), i * 100);
                 addResult(results[i], i);
             }
@@ -123,22 +122,22 @@ function dropMarker(i) {
 }
 
 function addResult(result, i) {
-    var results = document.getElementById('results');
-    var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
-    var markerIcon = MARKER_PATH + markerLetter + '.png';
+    var results = document.getElementById("results");
+    var markerLetter = String.fromCharCode("A".charCodeAt(0) + (i % 26));
+    var markerIcon = MARKER_PATH + markerLetter + ".png";
 
-    var tr = document.createElement('tr');
-    tr.style.backgroundColor = (i % 2 === 0 ? '#00ff8e' : '#ffffff');
+    var tr = document.createElement("tr");
+    tr.style.backgroundColor = (i % 2 === 0 ? "#00ff8e" : "#ffffff");
     tr.onclick = function() {
-        google.maps.event.trigger(markers[i], 'click');
+        google.maps.event.trigger(markers[i], "click");
     };
 
-    var iconTd = document.createElement('td');
-    var nameTd = document.createElement('td');
-    var icon = document.createElement('img');
+    var iconTd = document.createElement("td");
+    var nameTd = document.createElement("td");
+    var icon = document.createElement("img");
     icon.src = markerIcon;
-    icon.setAttribute('class', 'placeIcon');
-    icon.setAttribute('className', 'placeIcon');
+    icon.setAttribute("class", "placeIcon");
+    icon.setAttribute("className", "placeIcon");
     var name = document.createTextNode(result.name);
     iconTd.appendChild(icon);
     nameTd.appendChild(name);
@@ -148,7 +147,7 @@ function addResult(result, i) {
 }
 
 function clearResults() {
-    var results = document.getElementById('results');
+    var results = document.getElementById("results");
     while (results.childNodes[0]) {
         results.removeChild(results.childNodes[0]);
     }
@@ -158,7 +157,7 @@ function clearResults() {
 //anchored on the marker for the hotel or bar that the user selected.
 function showInfoWindow() {
     var marker = this;
-    
+
     //Set bounce animation to marker
     if (marker.getAnimation() !== null) {
         marker.setAnimation(null);
@@ -166,7 +165,7 @@ function showInfoWindow() {
     else {
         marker.setAnimation(google.maps.Animation.BOUNCE);
     }
-    
+
     //Shows marker information
     places.getDetails({ placeId: marker.placeResult.place_id },
         function(place, status) {
@@ -180,19 +179,19 @@ function showInfoWindow() {
 
 //Load the place information into the HTML elements used by the info window.
 function buildIWContent(place) {
-    document.getElementById('iw-icon').innerHTML = '<img class="infoIcon" ' +
+    document.getElementById("iw-icon").innerHTML = '<img class="infoIcon" ' +
         'src="' + place.icon + '"/>';
     document.getElementById('iw-url').innerHTML = '<b><a href="' + place.url +
         '">' + place.name + '</a></b>';
-    document.getElementById('iw-address').textContent = place.vicinity;
+    document.getElementById("iw-address").textContent = place.vicinity;
 
     if (place.formatted_phone_number) {
-        document.getElementById('iw-phone-row').style.display = '';
-        document.getElementById('iw-phone').textContent =
+        document.getElementById("iw-phone-row").style.display = "";
+        document.getElementById("iw-phone").textContent =
             place.formatted_phone_number;
     }
     else {
-        document.getElementById('iw-phone-row').style.display = 'none';
+        document.getElementById("iw-phone-row").style.display = "none";
     }
 
     //Assign a five-star rating to the hotel, using a black star ('&#10029;')
@@ -207,12 +206,12 @@ function buildIWContent(place) {
             else {
                 ratingHtml += '&#10029;';
             }
-            document.getElementById('iw-rating-row').style.display = '';
-            document.getElementById('iw-rating').innerHTML = ratingHtml;
+            document.getElementById("iw-rating-row").style.display = '';
+            document.getElementById("iw-rating").innerHTML = ratingHtml;
         }
     }
     else {
-        document.getElementById('iw-rating-row').style.display = 'none';
+        document.getElementById("iw-rating-row").style.display = "none";
     }
 
     //The regexp isolates the first part of the URL (domain plus subdomain)
@@ -224,10 +223,10 @@ function buildIWContent(place) {
             website = 'http://' + place.website + '/';
             fullUrl = website;
         }
-        document.getElementById('iw-website-row').style.display = '';
-        document.getElementById('iw-website').textContent = website;
+        document.getElementById("iw-website-row").style.display = '';
+        document.getElementById("iw-website").textContent = website;
     }
     else {
-        document.getElementById('iw-website-row').style.display = 'none';
+        document.getElementById("iw-website-row").style.display = "none";
     }
 }
