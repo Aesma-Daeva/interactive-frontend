@@ -7,7 +7,8 @@ body {
     margin: 0;
     padding: 0;
     font-size: 100%;
-    background-color: #ffffff;
+    height: 100%;
+    background: #ffffff;
     scroll-behavior: smooth;
 }
 
@@ -42,7 +43,6 @@ p {
     font-family: Lato;
 }
 
-.inputControls
 /*===Weather===*/
 
 #weatherButton {
@@ -77,7 +77,7 @@ p {
 
 #map {
     width: 100%;
-    height: 90vh;
+    height: 85vh;
 }
 
 #map:hover {
@@ -94,12 +94,16 @@ p {
 
 #listing {
     width: 100%;
-    height: 90vh;
+    height: 85vh;
     overflow: auto;
     cursor: pointer;
     overflow-x: hidden;
     font-family: Lato;
     font-weight: 400;
+    background-image: url(../images/pictures/listing-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #results:hover {
@@ -206,11 +210,12 @@ p {
 /*--Header Span Animation--*/
 
 .text-blur-out {
-	-webkit-animation: text-blur-out 6s ease-out 12s 2 alternate both;
-	animation: text-blur-out 6s ease-out 12s 2 alternate both;
-	}
+    -webkit-animation: text-blur-out 6s ease-out 12s 2 alternate both;
+    animation: text-blur-out 6s ease-out 12s 2 alternate both;
+}
 
 /*--Animation text-blur-out--*/
+
 @-webkit-keyframes text-blur-out {
     0% {
         -webkit-filter: blur(0.01);
@@ -239,12 +244,19 @@ p {
 
 @media only screen and (max-device-width: 1366px) {
     /*--Styles--*/
-    h1,
-    h2 {
+    h1 {
         text-align: left;
     }
     #place-input {
         font-size: 1.5rem;
+    }
+
+    #map {
+        height: 95vh;
+    }
+
+    #listing {
+        height: 95vh;
     }
 }
 
@@ -252,13 +264,20 @@ p {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     /*--Styles--*/
-    h1,
-    h2 {
+    h1 {
         text-align: left;
     }
 
     #place-input {
         font-size: 1.5rem;
+    }
+
+    #map {
+        height: 90vh;
+    }
+
+    #listing {
+        height: 90vh;
     }
 }
 
@@ -266,8 +285,7 @@ p {
 
 @media only screen and (min-device-width: 320px) and (max-device-height: 568px) {
     /*--Styles--*/
-    h1,
-    h2 {
+    h1 {
         font-size: 1.125rem;
         text-align: center;
     }
@@ -285,8 +303,7 @@ p {
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) {
     /*--Styles--*/
-    h1,
-    h2 {
+    h1 {
         font-size: 1.125rem;
         text-align: center;
     }
@@ -304,8 +321,7 @@ p {
 
 @media only screen and (min-device-width: 360px) and (max-device-height: 640px) {
     /*--Styles--*/
-    h1,
-    h2 {
+    h1 {
         font-size: 1rem;
         text-align: center;
     }
