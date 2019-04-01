@@ -4,6 +4,7 @@ This API is limited to 60 calls per minute on free subscription so I don't
 want it to constantly run whenever the user searches for a place.
 Documentation: https://openweathermap.org/current
 */
+
 $("#weatherButton").click(function() {
     //Gets value from input form search box
     var place = $("#place-input").val();
@@ -35,4 +36,4 @@ $("#weatherButton").click(function() {
     $("#place-input").keypress(function clearWeatherOutput() {
         $("#weatherData").children().fadeOut(2000).empty();
     });
-});
+})
