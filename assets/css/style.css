@@ -17,6 +17,10 @@ h1 {
     padding-top: 10px;
 }
 
+h2 {
+    display: none;
+}
+
 p {
     font-size: 1.125rem;
     font-weight: 600;
@@ -188,8 +192,8 @@ p {
 
 @-webkit-keyframes text-blur-out {
     0% {
-        -webkit-filter: blur(0.01);
-        filter: blur(0.01);
+        -webkit-filter: blur(0);
+        filter: blur(0);
     }
     100% {
         -webkit-filter: blur(12px) opacity(0%);
@@ -199,8 +203,8 @@ p {
 
 @keyframes text-blur-out {
     0% {
-        -webkit-filter: blur(0.01);
-        filter: blur(0.01);
+        -webkit-filter: blur(0);
+        filter: blur(0);
     }
     100% {
         -webkit-filter: blur(12px) opacity(0%);
