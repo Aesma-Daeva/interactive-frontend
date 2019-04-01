@@ -100,10 +100,10 @@ p {
     overflow-x: hidden;
     font-family: Lato;
     font-weight: 400;
-    background-image: url(../images/pictures/listing-bg.png);
+    background-image: url("../images/pictures/listing-bg.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto 100%;
 }
 
 #results:hover {
@@ -174,44 +174,11 @@ p {
 
 /*===Header Text Animation===*/
 
-.tracking-in-expand {
-    -webkit-animation: tracking-in-expand 10s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s both;
-    animation: tracking-in-expand 10s cubic-bezier(0.215, 0.610, 0.355, 1.000) 2s both;
-}
-
-/*--Animation tracking-in-expand--*/
-
-@-webkit-keyframes tracking-in-expand {
-    0% {
-        letter-spacing: -0.5em;
-        opacity: 0;
-    }
-    40% {
-        opacity: 0.6;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes tracking-in-expand {
-    0% {
-        letter-spacing: -0.5em;
-        opacity: 0;
-    }
-    40% {
-        opacity: 0.6;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 /*--Header Span Animation--*/
 
 .text-blur-out {
-    -webkit-animation: text-blur-out 6s ease-out 12s 2 alternate both;
-    animation: text-blur-out 6s ease-out 12s 2 alternate both;
+    -webkit-animation: text-blur-out 6s ease-out 3s 2 alternate both;
+    animation: text-blur-out 6s ease-out 3s 2 alternate both;
 }
 
 /*--Animation text-blur-out--*/
