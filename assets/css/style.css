@@ -8,7 +8,8 @@ body {
     padding: 0;
     font-size: 100%;
     height: 100%;
-    background: #ffffff;
+    /*background: #ffffff url("https://i.pinimg.com/736x/3a/b3/16/3ab31696a54f7463a4f6c99ff2dfcab2--lets-go-travelling.jpg") no-repeat scroll center right;*/
+    /*background-size: contain;*/
     scroll-behavior: smooth;
 }
 
@@ -107,10 +108,8 @@ p {
     overflow-x: hidden;
     font-family: Lato;
     font-weight: 400;
-    background-image: url("../images/pictures/listing-bg.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: auto 100%;
+    background: url("/assets/images/pictures/signpost.png") no-repeat center;
+    background-size: cover;
 }
 
 #results:hover {
