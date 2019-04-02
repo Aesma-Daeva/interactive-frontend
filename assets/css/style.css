@@ -39,6 +39,9 @@ p {
 .jumbotron {
     background-image: url("../images/pictures/jumbotron-bg.png");
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     position: relative;
     height: 200px;
     margin-bottom: 0.5rem;
@@ -177,6 +180,9 @@ p {
     font-weight: 400;
     background: url("../images/pictures/signpost.png") no-repeat center;
     background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
 #listing:hover {
