@@ -258,12 +258,17 @@ p {
 
 /*===Footer===*/
 
+#footer-text {
+    font-size: 1rem;
+}
+
 .social-links {
     text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-size: 1.25rem;
 }
 
 .social-links li {
@@ -322,6 +327,14 @@ p {
     #listing {
         height: 95vh;
     }
+    
+    #footer-text {
+        font-size: 1.125rem;
+    }
+    
+    .social-links {
+        font-size: 1.5rem;
+    }
 }
 
 /*--iPad--*/
@@ -363,6 +376,10 @@ p {
 
     #resultsTable {
         font-size: 0.75rem;
+    }
+    
+    #footer-text {
+        font-size: 0.9rem;
     }
 }
 
@@ -415,6 +432,11 @@ p {
 
     #footer-text {
         text-align: center;
+        font-size: 1rem;
+    }
+    
+    .social-links {
+        font-size: 1.25rem;
     }
 }
 
@@ -445,5 +467,10 @@ p {
 
     #footer-text {
         text-align: center;
+        font-size: 0.75rem;
+    }
+    
+    .social-links {
+        font-size: 1rem;
     }
 }
