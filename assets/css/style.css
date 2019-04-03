@@ -31,7 +31,7 @@ p {
 }
 
 #map-container {
-    margin-top: 0.5rem;
+    margin: 0.5rem 0;
 }
 
 /*===Jumbotron===*/
@@ -256,6 +256,52 @@ p {
     font-family: Roboto;
 }
 
+/*===Footer===*/
+
+.social-links {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links li {
+    padding: 0 5px;
+}
+
+.fa-github {
+    color: #000000;
+}
+
+.fa-github:hover {
+    color: #FFEF00;
+}
+
+.fa-linkedin {
+    color: #0077B5;
+}
+
+.fa-linkedin:hover {
+    color: #8900FF;
+}
+
+.fa-facebook-square {
+    color: #3b5998;
+}
+
+.fa-facebook-square:hover {
+    color: #00FF8E;
+}
+
+.fa-twitter {
+    color: #38A1F3;
+}
+
+.fa-twitter:hover {
+    color: #00FFE2;
+}
+
 /*===Media Queries===*/
 
 /*--iPad Pro--*/
@@ -284,6 +330,10 @@ p {
     /*--Styles--*/
     h1 {
         text-align: left;
+    }
+    
+    .jumbotron {
+        height: 150px;
     }
 
     #place-input {
@@ -314,10 +364,6 @@ p {
     #resultsTable {
         font-size: 0.75rem;
     }
-
-    .jumbotron {
-        height: 150px;
-    }
 }
 
 /*--iPhone 5--*/
@@ -329,6 +375,10 @@ p {
         text-align: center;
     }
 
+    .jumbotron {
+        height: 80px;
+    }
+
     #place-input {
         font-size: 1.125rem;
     }
@@ -336,9 +386,9 @@ p {
     .weatherButton {
         font-size: 0.75rem;
     }
-
-    .jumbotron {
-        height: 80px;
+    
+    #footer-text {
+        text-align: center;
     }
 }
 
@@ -351,6 +401,10 @@ p {
         text-align: center;
     }
 
+    .jumbotron {
+        height: 100px;
+    }
+
     #place-input {
         font-size: 1.25rem;
     }
@@ -359,8 +413,8 @@ p {
         font-size: 0.75rem;
     }
 
-    .jumbotron {
-        height: 100px;
+    #footer-text {
+        text-align: center;
     }
 }
 
@@ -371,6 +425,10 @@ p {
     h1 {
         font-size: 1rem;
         text-align: center;
+    }
+
+    .jumbotron {
+        height: 80px;
     }
 
     #place-input {
@@ -385,7 +443,7 @@ p {
         font-size: 0.75rem;
     }
 
-    .jumbotron {
-        height: 80px;
+    #footer-text {
+        text-align: center;
     }
 }
