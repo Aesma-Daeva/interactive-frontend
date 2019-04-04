@@ -103,6 +103,9 @@ function search() {
                 addResult(results[i], i);
             }
         }
+        else if (status === google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
+            document.getElementById("results").innerHTML = "Sorry! No result was found for this request.";
+        }
     });
 }
 

@@ -190,6 +190,10 @@ p {
     box-shadow: -3px 3px 6px 0 #707070;
 }
 
+#results {
+    font-weight: 600;
+    background-color: #00ff8e;
+}
 #results:hover {
     font-family: Roboto;
     font-weight: 500;
