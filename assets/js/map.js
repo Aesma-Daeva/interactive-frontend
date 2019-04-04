@@ -104,7 +104,12 @@ function search() {
             }
         }
         else if (status === google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
+            clearResults();
+            clearMarkers();
+            
+            //Message if there are no markers to show hotel, bars, etc.
             document.getElementById("results").innerHTML = "Sorry! No result was found for this request.";
+            alert("Sorry! No result was found for this request.");
         }
     });
 }
