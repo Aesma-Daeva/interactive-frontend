@@ -109,6 +109,7 @@ function search() {
             
             //Message if there are no markers to show hotel, bars, etc.
             document.getElementById("results").innerHTML = "Sorry! No result was found for this request.";
+            $('#noResultModal').modal('show');
         }
     });
 }
