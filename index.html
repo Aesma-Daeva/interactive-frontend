@@ -134,14 +134,17 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <!--Clicking the social link will open a new window-->
         <div class="container-fluid">
             <div class="row">
+                <!-- Copyright Info -->
                 <div class="col-md-4">
                     <p class="text-info font-weight-normal text-md-left" id="footer-text">&copy; <span id="footerYear"></span> map-weather-api.com
                     </p>
                 </div>
+                <!-- Social Links -->
+                <!--Clicking the social link will open a new window-->
                 <div class="col-md-4">
                     <ul class="list-inline social-links">
                         <li><a target="_blank" href="https://github.com/"><i class="fab fa-github"></i></a></li>
@@ -152,15 +155,22 @@
                 </div>
             </div>
         </div>
+        <!-- Scroll to Top Button -->
+        <button type="button" class="btn btn-outline btn-sm" id="scrollUp" onclick="scrollUp()"><i class="fas fa-arrow-circle-up"></i></button>
     </footer>
 
-    <!-- Bootstrap jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- Bootstrap jQuery first, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
+    <!-- jQuery -->
+    <!--I use this for the weather API -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
     <!-- JavaScript -->
-    <script src="./assets/js/getDate.js"></script>
     <script src="./assets/js/noIcon.js"></script>
+    <script src="./assets/js/scrollUp.js"></script>
+    <script src="./assets/js/getDate.js"></script>
     <script src="./assets/js/weather.js"></script>
     <script src="./assets/js/map.js"></script>
 

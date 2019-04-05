@@ -194,6 +194,7 @@ p {
     font-weight: 600;
     background-color: rgba(0, 123, 255, 0.65);
 }
+
 #results:hover {
     font-family: Roboto;
     font-weight: 500;
@@ -311,6 +312,28 @@ p {
     color: #00FFE2;
 }
 
+/*===Scroll Up Button===*/
+
+#scrollUp {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #ec6496;
+    color: #ffffff;
+    cursor: pointer;  /* Add a mouse pointer on hover */
+    border-radius: 10px;
+    font-size: 1.25rem;
+}
+
+#scrollUp:hover {
+    background-color: #64ecba;
+    transition-duration: 0.5s;
+}
+
 /*===Media Queries===*/
 
 /*--iPad Pro--*/
@@ -331,11 +354,11 @@ p {
     #listing {
         height: 95vh;
     }
-    
+
     #footer-text {
         font-size: 1.125rem;
     }
-    
+
     .social-links {
         font-size: 1.5rem;
     }
@@ -348,7 +371,7 @@ p {
     h1 {
         text-align: left;
     }
-    
+
     .jumbotron {
         height: 150px;
     }
@@ -381,7 +404,7 @@ p {
     #resultsTable {
         font-size: 0.75rem;
     }
-    
+
     #footer-text {
         font-size: 0.9rem;
     }
@@ -407,12 +430,12 @@ p {
     .weatherButton {
         font-size: 0.75rem;
     }
-    
+
     #footer-text {
         text-align: center;
         font-size: 1rem;
     }
-    
+
     .social-links {
         font-size: 1.25rem;
     }
@@ -443,7 +466,7 @@ p {
         text-align: center;
         font-size: 1rem;
     }
-    
+
     .social-links {
         font-size: 1.25rem;
     }
@@ -478,7 +501,7 @@ p {
         text-align: center;
         font-size: 0.75rem;
     }
-    
+
     .social-links {
         font-size: 1rem;
     }
