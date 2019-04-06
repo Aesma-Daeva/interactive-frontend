@@ -38,7 +38,6 @@ function initMap() {
     });
 }
 
-
 //When the user selects a city, get the place details for the city and
 //zoom the map in on the city.
 function onPlaceChanged() {
@@ -106,7 +105,7 @@ function search() {
         else if (status === google.maps.places.PlacesServiceStatus.ZERO_RESULTS) {
             clearResults();
             clearMarkers();
-            
+
             //Message if there are no markers to show hotel, bars, etc.
             document.getElementById("results").innerHTML = "Sorry! No result was found for this request.";
             $('#noResultModal').modal('show');

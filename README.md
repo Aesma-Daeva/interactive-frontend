@@ -8,7 +8,9 @@ This is for educational purposes only and not intended for commercial use.
 
 # UX
 
-In this SPA, user will be able to do the following:
+I wanted a colorful SPA that will inspire users to go on adventure but also practical to use. So I decided to include a weather API along with providing information they would typically need to get around unfamiliar places.
+
+In this SPA, users will be able to do the following:
 
 * Users that want to travel can search for a city they want to visit;
 
@@ -22,7 +24,9 @@ In this SPA, user will be able to do the following:
 * Users can also see the temperature for that city right at the current time they searched.
 * Users will also see the weather for that city at that specific time.
     
-Update for weather and temperature is every 2 hours.
+Update for weather and temperature is every 2 hours. Don't worry, the weather forecast is reliable and accurate. :relaxed:
+
+Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weather-api/blob/master/wireframe/map-weather-api-wireframe.pdf "Map and Weather API Wireframe")
 
 ---
 
@@ -45,3 +49,71 @@ Update for weather and temperature is every 2 hours.
 
 ## Features
 
+### Existing Features:
+
+#### Map Features
+
+* The top of the page has a colorful map image with the quote, "Not all those who wander are lost..." - from a poem by Tolkien, "All That is Gold Does Not Glitter".
+* The quote has a text animation that makes the word "lost" disappear. I did not set the animation to repeat indefinitely because some might find it annoying. I just wanted something to catch their attention.
+* On the top left is the search field where the user can type a city and click one of the options google map shows on the vertical menu that it generates.
+* Next, there is a dropdown list where the user can click and select -
+<details>
+    <summary>6 different types of establishments:</summary>
+    <p>
+    * Accommodations
+    * Attractions
+    * Bars
+    * Restaurants
+    * Stores
+    * Transportations
+     </p>
+</details>
+
+
+* Then by default setting based on first selection from the dropdown menu, the markers on the map for Accommodation will do an animation drop and populate the map with marker locations.
+* There will also be a table of results that will show a list of names for the markers on the map so the user can either click on the marker or the name of the establishment.
+* The marker has an information window that the user can click to show more information about the establishment.
+* The information window can show the name of the establishment, website, address, telephone number and customer rating.
+* The establishment name can be clicked and it will open directly on Google Maps app or open in a new browser window if the user is using a desktop or laptop.
+* Each establishment has custom icons that will show the type of establishment that the user chose.
+<details>
+    <summary>Custom Icons</summary>
+    <p>
+    * Accommodation has a bed icon
+    * Attractions has a camera icon
+    * Bar has a martini glass icon
+    * Restaurant has a cutlery icon
+    * Store has a shopping cart icon
+    * Transportation has a bus icon
+</p>
+</details>
+
+* The icons for markers also have 6 different colors designated for each type of establishment.
+
+    <details>
+    <summary>Custom Icon Colors</summary>
+    <p>
+    * Accommodation - Blue - #0099ff
+    * Attractions - SpringGreen - #00ff8e
+    * Bar - SlateBlue - #8900ff
+    * Restaurant - Yellow - #ffea00
+    * Store - Red - #ff3555
+    * Transportation - Orange - #ffb200
+</p>
+</details>
+
+* The map can be moved and the user will need to select one of the options for establishments again  to generate new map markers. I did not set the markers to  auto-populate because I did not want to interrupt the user while using the google map in case the user might still be reading the info window or just familiarising with the map's vicinity/landmarks.
+* The map marker bounces when clicked so the user can see its exact location in case there are other overlapping markers.
+* The bouncing marker can be turned off by clicking on the same marker again.
+* If all markers are just clicked once, they will all continue to bounce.
+* There is also a table of results that gets generated in case the map marker that the user wants to click is overlapped by other markers, the user can still see information about that marker by click on the name of the establishment on the table list generated.
+* The map can be zoomed in.
+* The pegman can be dropped for Google Street View.
+* Satellite imagery is also enabled and labels can be turned off.
+* Toggle full screen view is also enabled.
+* If there is no result for establishment, there is a custom pop up message that will tell the user that there are no results for their query. The user needs to click the "x" or "Close" button to close the modal. The same message will also show in the results table.
+
+#### Weather Features
+
+* There is a "Show Weather" button and once the user clicks it, the weather icon, short weather description and temperature for that city will show.
+* If there is no weather data to show, there is a custom message that will show and fade out after 4 seconds. "Weather Status: Unpredictable! The weather information is still brewing for that place."
