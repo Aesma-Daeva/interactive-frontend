@@ -80,17 +80,13 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 * The information window can show the name of the establishment, website, address, telephone number and customer rating.
 * The establishment name can be clicked and it will open directly on Google Maps app or open in a new browser window if the user is using a desktop or laptop.
 * Each establishment has custom icons that will show the type of establishment that the user chose.
-
-    <details>
-        <summary>Custom Icons</summary>
-       <p> 1. Accommodation  ![Bed Icon](http://i65.tinypic.com/nefbmh.png "Bed Icon")</p>
-       <p> 2. Attractions ![Camera Icon](http://i68.tinypic.com/vggso.png "Camera Icon")</p>
-       <p> 3. Bar ![Martini Glass Icon](http://i66.tinypic.com/1z4zri8.png "Martini Glass Icon")</p>
-       <p> 4. Restaurant ![Cutlery Icon](http://i67.tinypic.com/6itptu.png "Cutlery Icon")</p>
-       <p> 5. Store ![Shopping Cart Icon](http://i65.tinypic.com/1zc1r1e.png "Shopping Cart Icon")</p>
-       <p> 6. Transportation ![Bus Icon](http://i66.tinypic.com/30kqetd.png "Bus Icon")</p>
-    </details>
-
+    * Accommodation  ![Bed Icon](http://i65.tinypic.com/nefbmh.png "Bed Icon")
+    * Attractions ![Camera Icon](http://i68.tinypic.com/vggso.png "Camera Icon")
+    * Bar ![Martini Glass Icon](http://i66.tinypic.com/1z4zri8.png "Martini Glass Icon")
+    * Restaurant ![Cutlery Icon](http://i67.tinypic.com/6itptu.png "Cutlery Icon")
+    * Store ![Shopping Cart Icon](http://i65.tinypic.com/1zc1r1e.png "Shopping Cart Icon")
+    * Transportation ![Bus Icon](http://i66.tinypic.com/30kqetd.png "Bus Icon")
+    
 * The icons for markers also have 6 different colors designated for each type of establishment.
 
     <details>
@@ -137,7 +133,7 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 * [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3 "CSS3") is the style sheet language used to style the HTML elements and website.
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JavaScript") is the programming language used for Google Map API; creating DOM elements for the map and weather API; HTML event handlers and for making the website interactive.
 * [JQuery](https://jquery.com/ "JQuery") is the JS library used for displaying the data for weather API and Ajax to get JSON data.
-* [Bootstrap 4 ](https://getbootstrap.com/ "Bootstrap 4") is the framework used for the mobile responsiveness and grid layout of the SPA; I also used its pre-made componentes - jumbotron, input form, select form, buttons, modal and their utility classes for styling, sizing and alignments.
+* [Bootstrap 4 ](https://getbootstrap.com/ "Bootstrap 4") is the framework used for the mobile responsiveness and grid layout of the SPA; I also used its pre-made components - jumbotron, input form, select form, buttons, modal and their utility classes for styling, sizing and alignments.
 * [Font Awesome](https://fontawesome.com/ "Font Awesome") is used for the footer social media and website icons. Also for the scroll up button icon.
 * [Google Places API](https://developers.google.com/places/web-service/intro "Google Places API") for the map functionality
 * [OpenWeatherMap API](https://openweathermap.org/api "OpenWeatherMap API") for the weather information and JSON data
