@@ -53,7 +53,7 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 
 ### Existing Features:
 
-![Jumbotron with Quote](http://i66.tinypic.com/2w51y81.png "Jumbotron Image with a Quote")
+![Jumbotron with Quote](http://i67.tinypic.com/2cwmrh5.jpg "Jumbotron Image with a Quote")
 
 * The top of the page has a colorful map image with the quote, "Not all those who wander are lost..." - from a poem by Tolkien, "All That is Gold Does Not Glitter".
 * The quote has a text animation that makes the word "lost" disappear. I did not set the animation to repeat indefinitely because some might find it annoying. I just wanted something to catch their attention.
@@ -143,4 +143,26 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 ---
 
 ## Testing
+
+* HTML5 Validator found an error about the weather icon image source attribute because there is no src attribute and links to the img element. I can not put a default link because the links dynamically change depending on the weather query. This was purposefully ommitted on the HTML part because I use jQuery to push the src attribute to the img tag.
+
+![Image Source Error](http://i65.tinypic.com/2hpn79f.jpg "Img Src Error")
+
+* Another error HTML5 Validator found was not having an alt attribute. I purposefully ommitted this because it will always show on the page by default because weather icon only gets generated once the user clicks the "Show Weather" button.
+
+To remedy that issue, I created a noIcon.js. In case the weather API has no icon  to show, that will generate a custom error message saying, "The icon has gone with the wind."
+
+![Image Alt Attribute Error](http://i68.tinypic.com/21kfjm8.jpg "Img Alt Error")
+
+The source of both errors in HTML5:
+
+`<img class="weatherIcon" onerror="noIcon()">`
+
+How the icon link gets generated:
+
+`var weatherIcon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";`
+
+How the icon gets created as a DOM element:
+
+`$(".weatherIcon").attr("src", weatherIcon).fadeIn(2000);`
 
