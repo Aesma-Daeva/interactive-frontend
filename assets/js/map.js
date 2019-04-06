@@ -68,22 +68,22 @@ function search() {
             //assign a letter of the alphabet to each marker icon.
             for (var i = 0; i < results.length; i++) {
                 if (typeSelected == "lodging") {
-                    customIcon = "./assets/images/icons/accommodationIcon.png"
+                    customIcon = "./assets/images/icons/accommodationIcon.png";
                 }
                 else if (typeSelected == "museum") {
-                    customIcon = "./assets/images/icons/attractionsIcon.png"
+                    customIcon = "./assets/images/icons/attractionsIcon.png";
                 }
                 else if (typeSelected == "bar") {
-                    customIcon = "./assets/images/icons/barIcon.png"
+                    customIcon = "./assets/images/icons/barIcon.png";
                 }
                 else if (typeSelected == "restaurant") {
-                    customIcon = "./assets/images/icons/restaurantIcon.png"
+                    customIcon = "./assets/images/icons/restaurantIcon.png";
                 }
                 else if (typeSelected == "store") {
-                    customIcon = "./assets/images/icons/storeIcon.png"
+                    customIcon = "./assets/images/icons/storeIcon.png";
                 }
                 else if (typeSelected == "transit_station") {
-                    customIcon = "./assets/images/icons/transportationIcon.png"
+                    customIcon = "./assets/images/icons/transportationIcon.png";
                 }
                 //Use marker animation to drop the icons incrementally on the map.
                 markers[i] = new google.maps.Marker({

@@ -35,4 +35,4 @@ $("#weatherButton").click(function() {
     $("#place-input").keypress(function clearWeatherOutput() {
         $("#weatherData").children().fadeOut(2000).empty();
     });
-})
+});
