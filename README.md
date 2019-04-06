@@ -51,23 +51,25 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 
 ### Existing Features:
 
-#### Map Features
-
 * The top of the page has a colorful map image with the quote, "Not all those who wander are lost..." - from a poem by Tolkien, "All That is Gold Does Not Glitter".
 * The quote has a text animation that makes the word "lost" disappear. I did not set the animation to repeat indefinitely because some might find it annoying. I just wanted something to catch their attention.
+* At the footer are links to social media sites and other relevant webpages.
+* There is a "Scroll to Top" button at the lower right corner with an arrow sign. So users don't have to keep scrolling up again which is great to use on mobile view.
+
+#### Map Features
+
 * On the top left is the search field where the user can type a city and click one of the options google map shows on the vertical menu that it generates.
 * Next, there is a dropdown list where the user can click and select -
-<details>
-    <summary>6 different types of establishments:</summary>
-    <p>
-    * Accommodations
-    * Attractions
-    * Bars
-    * Restaurants
-    * Stores
-    * Transportations
-     </p>
-</details>
+
+    <details>
+        <summary>6 different types of establishments:</summary>
+         <p>1. Accommodations</p>
+         <p>2. Attractions</p>
+         <p>3. Bars</p>
+         <p>4. Restaurants</p>
+         <p>5. Stores</p>
+         <p>6. Transportations</p>
+    </details>
 
 
 * Then by default setting based on first selection from the dropdown menu, the markers on the map for Accommodation will do an animation drop and populate the map with marker locations.
@@ -76,31 +78,28 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 * The information window can show the name of the establishment, website, address, telephone number and customer rating.
 * The establishment name can be clicked and it will open directly on Google Maps app or open in a new browser window if the user is using a desktop or laptop.
 * Each establishment has custom icons that will show the type of establishment that the user chose.
-<details>
-    <summary>Custom Icons</summary>
-    <p>
-    * Accommodation has a bed icon
-    * Attractions has a camera icon
-    * Bar has a martini glass icon
-    * Restaurant has a cutlery icon
-    * Store has a shopping cart icon
-    * Transportation has a bus icon
-</p>
-</details>
+
+    <details>
+        <summary>Custom Icons</summary>
+       <p> 1. Accommodation - Bed Icon</p>
+       <p> 2. Attractions - Camera Icon</p>
+       <p> 3. Bar - Martini Glass Icon</p>
+       <p> 4. Restaurant - Cutlery Icon</p>
+       <p> 5. Store - Shopping Cart Icon</p>
+       <p> 6. Transportation - Bus Icon</p>
+    </details>
 
 * The icons for markers also have 6 different colors designated for each type of establishment.
 
     <details>
-    <summary>Custom Icon Colors</summary>
-    <p>
-    * Accommodation - Blue - #0099ff
-    * Attractions - SpringGreen - #00ff8e
-    * Bar - SlateBlue - #8900ff
-    * Restaurant - Yellow - #ffea00
-    * Store - Red - #ff3555
-    * Transportation - Orange - #ffb200
-</p>
-</details>
+        <summary>Custom Icon Colors</summary>
+        <p>1. Accommodation - Blue - #0099ff</p>
+        <p>2. Attractions - SpringGreen - #00ff8e</p>
+        <p>3. Bar - SlateBlue - #8900ff</p>
+        <p>4. Restaurant - Yellow - #ffea00</p>
+        <p>5. Store - Red - #ff3555</p>
+        <p>6. Transportation - Orange - #ffb200</p>
+    </details>
 
 * The map can be moved and the user will need to select one of the options for establishments again  to generate new map markers. I did not set the markers to  auto-populate because I did not want to interrupt the user while using the google map in case the user might still be reading the info window or just familiarising with the map's vicinity/landmarks.
 * The map marker bounces when clicked so the user can see its exact location in case there are other overlapping markers.
@@ -115,5 +114,16 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 
 #### Weather Features
 
-* There is a "Show Weather" button and once the user clicks it, the weather icon, short weather description and temperature for that city will show.
-* If there is no weather data to show, there is a custom message that will show and fade out after 4 seconds. "Weather Status: Unpredictable! The weather information is still brewing for that place."
+* There is a "Show Weather" button and once the user clicks it, it shows the weather icon, short weather description and temperature for that city.
+* If there is no weather data to show, there is a custom message that will show and fade out after 4 seconds. Custom message:
+
+"Weather Status: Unpredictable! The weather information is still brewing for that place."
+
+### Features Left to Implement
+
+* Make a map version using LeafletJS
+* Add images using Unsplash API
+* Add wind speed information to weather API
+
+---
+
