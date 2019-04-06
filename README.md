@@ -51,18 +51,20 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 
 ### Existing Features:
 
+![Jumbotron with Quote](http://i66.tinypic.com/2w51y81.png "Jumbotron Image with a Quote")
+
 * The top of the page has a colorful map image with the quote, "Not all those who wander are lost..." - from a poem by Tolkien, "All That is Gold Does Not Glitter".
 * The quote has a text animation that makes the word "lost" disappear. I did not set the animation to repeat indefinitely because some might find it annoying. I just wanted something to catch their attention.
 * At the footer are links to social media sites and other relevant webpages.
-* There is a "Scroll to Top" button at the lower right corner with an arrow sign. So users don't have to keep scrolling up again which is great to use on mobile view.
+* There is a "Scroll to Top" button at the lower right corner with an arrow sign so users don't have to keep scrolling up again which is great to use on mobile view.
 
 #### Map Features
 
 * On the top left is the search field where the user can type a city and click one of the options google map shows on the vertical menu that it generates.
-* Next, there is a dropdown list where the user can click and select -
+* Next, there is a dropdown list where the user can click and select one of the following:
 
     <details>
-        <summary>6 different types of establishments:</summary>
+        <summary>6 different types of establishments</summary>
          <p>1. Accommodations</p>
          <p>2. Attractions</p>
          <p>3. Bars</p>
@@ -81,12 +83,12 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 
     <details>
         <summary>Custom Icons</summary>
-       <p> 1. Accommodation - Bed Icon</p>
-       <p> 2. Attractions - Camera Icon</p>
-       <p> 3. Bar - Martini Glass Icon</p>
-       <p> 4. Restaurant - Cutlery Icon</p>
-       <p> 5. Store - Shopping Cart Icon</p>
-       <p> 6. Transportation - Bus Icon</p>
+       <p> 1. Accommodation  ![Bed Icon](http://i65.tinypic.com/nefbmh.png "Bed Icon")</p>
+       <p> 2. Attractions ![Camera Icon](http://i68.tinypic.com/vggso.png "Camera Icon")</p>
+       <p> 3. Bar ![Martini Glass Icon](http://i66.tinypic.com/1z4zri8.png "Martini Glass Icon")</p>
+       <p> 4. Restaurant ![Cutlery Icon](http://i67.tinypic.com/6itptu.png "Cutlery Icon")</p>
+       <p> 5. Store ![Shopping Cart Icon](http://i65.tinypic.com/1zc1r1e.png "Shopping Cart Icon")</p>
+       <p> 6. Transportation ![Bus Icon](http://i66.tinypic.com/30kqetd.png "Bus Icon")</p>
     </details>
 
 * The icons for markers also have 6 different colors designated for each type of establishment.
@@ -105,19 +107,21 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 * The map marker bounces when clicked so the user can see its exact location in case there are other overlapping markers.
 * The bouncing marker can be turned off by clicking on the same marker again.
 * If all markers are just clicked once, they will all continue to bounce.
-* There is also a table of results that gets generated in case the map marker that the user wants to click is overlapped by other markers, the user can still see information about that marker by click on the name of the establishment on the table list generated.
+* There is also a table of results that gets generated in case the map marker that the user wants to click is overlapped by other markers, the user can still see information about that marker by clicking on the name of the establishment on the table list generated.
 * The map can be zoomed in.
 * The pegman can be dropped for Google Street View.
 * Satellite imagery is also enabled and labels can be turned off.
 * Toggle full screen view is also enabled.
 * If there is no result for establishment, there is a custom pop up message that will tell the user that there are no results for their query. The user needs to click the "x" or "Close" button to close the modal. The same message will also show in the results table.
 
+    "Sorry! No result was found for this request."
+
 #### Weather Features
 
 * There is a "Show Weather" button and once the user clicks it, it shows the weather icon, short weather description and temperature for that city.
 * If there is no weather data to show, there is a custom message that will show and fade out after 4 seconds. Custom message:
 
-"Weather Status: Unpredictable! The weather information is still brewing for that place."
+    "Weather Status: Unpredictable! The weather information is still brewing for that place."
 
 ### Features Left to Implement
 
@@ -126,4 +130,19 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 * Add wind speed information to weather API
 
 ---
+
+## Technologies Used
+
+* [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5 "HTML5") is the markup language used for rendering the website.
+* [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3 "CSS3") is the style sheet language used to style the HTML elements and website.
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JavaScript") is the programming language used for Google Map API; creating DOM elements for the map and weather API; HTML event handlers and for making the website interactive.
+* [JQuery](https://jquery.com/ "JQuery") is the JS library used for displaying the data for weather API and Ajax to get JSON data.
+* [Bootstrap 4 ](https://getbootstrap.com/ "Bootstrap 4") is the framework used for the mobile responsiveness and grid layout of the SPA; I also used its pre-made componentes - jumbotron, input form, select form, buttons, modal and their utility classes for styling, sizing and alignments.
+* [Font Awesome](https://fontawesome.com/ "Font Awesome") is used for the footer social media and website icons. Also for the scroll up button icon.
+* [Google Places API](https://developers.google.com/places/web-service/intro "Google Places API") for the map functionality
+* [OpenWeatherMap API](https://openweathermap.org/api "OpenWeatherMap API") for the weather information and JSON data
+
+---
+
+## Testing
 
