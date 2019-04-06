@@ -2,6 +2,8 @@
 ## Interactive Frontend Project
 This is a single page application (SPA) made by combining Google Map and OpenWeatherMap API. Using Google Map API, users can search for a city they want to visit; find attractions, hotels, bars, restaurants, stores, and bus or tram stations. The OpenWeatherMap API provides information about the current weather and temperature at the city the user searched.
 
+Link for deployed site: [Map and Weather API](https://aesma-daeva.github.io/map-weather-api/ "Map and Weather API")
+
 This is for educational purposes only and not intended for commercial use.
 
 ---
