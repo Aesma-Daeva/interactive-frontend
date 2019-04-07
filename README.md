@@ -44,8 +44,15 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 8. Once the user types a city, the user can choose markers to show by clicking on the dropdown menu. User can choose accommodations, attractions, bars, restaurants, stores or transportation.
 9. User typed a city but there was no markers showing on the map if the user search for accommodations, bars, stores etc. This means there is no establishment like that on that particular place. User will see a pop up window (modal) that will show a message saying, "Sorry! No result was found for this request." and then user needs to click "Close" button to close the window. User can also see the same message on table where marker results show if there were anything to show. This lets the user know there is no information to show about that type of establishment.
 10. User moves the map. The markers don't automatically pop up. The user needs to click the dropdown menu again to show new markers for the information they want to see.
-11. User clicks the "Show Weather" button. User can see an icon for the current weather, a short description and the temperature.
-12. User searched for a city, clicked "Show Weather" button but there was no information about weather in that city. The user will see this message instead, "Weather Status: Unpredictable! The weather information is still brewing for that place."
+11. User can see Google Map Drawing controls. User clicks "Add a marker" and puts it on the map.
+12. User also see other drawing control and click "Draw a line" to connect the map marker and the lines. User made a route to follow and took a screenshot.
+13. User clicked "Draw a Shape" on the drawing controls. User clicked "Attractions" and made markers of places that user wants to visit. User used "Draw a Shape" to mark the vicinity of places to visit. User then takes a screenshot to save the information.
+14. User searched for a new place. All drawing markers are gone.
+15. User searched for "Stores" then clicked "Draw a circle" on the drawing controls to highlight the store location.
+16. User then click "Draw a Line" on drawing controls  to mark a route to take to get to the store location.
+17. User also clicked "Draw a Rectangle" to mark the whole area between the store and other areas that the user wanted to mark on the map.
+18. User clicks the "Show Weather" button. User can see an icon for the current weather, a short description and the temperature.
+19. User searched for a city, clicked "Show Weather" button but there was no information about weather in that city. The user will see this message instead, "Weather Status: Unpredictable! The weather information is still brewing for that place."
 
 ---
 
@@ -101,7 +108,7 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
         <p>6. Transportation - Orange - #ffb200</p>
     </details>
 
-* The map can be moved and the user will need to select one of the options for establishments again  to generate new map markers. I did not set the markers to  auto-populate because I did not want to interrupt the user while using the google map in case the user might still be reading the info window or just familiarising with the map's vicinity/landmarks.
+* The map can be moved and the user will need to select one of the options for establishments again  to generate new map markers. I did not set the markers to  auto-populate because I did not want to interrupt the user while using the google map in case the user might still be reading the info window, using the Google Map Drawing tool to make routes or just familiarising with the map's vicinity/landmarks.
 * The map marker bounces when clicked so the user can see its exact location in case there are other overlapping markers.
 * The bouncing marker can be turned off by clicking on the same marker again.
 * If all markers are just clicked once, they will all continue to bounce.
@@ -113,6 +120,9 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 * If there is no result for establishment, there is a custom pop up message that will tell the user that there are no results for their query. The user needs to click the "x" or "Close" button to close the modal. The same message will also show in the results table.
 
     "Sorry! No result was found for this request."
+* Google Map Drawing is also enabled so user can draw their own route, add their own marker, highlight certain areas they want to remember and print it or take a screenshot of it.
+* The drawing controls will enable the user to add markers, draw a circle, draw a shape, draw a line, draw a rectangle and to also stop drawing.
+* The drawing will clear once the user chooses a different place.
 
 #### Weather Features
 
@@ -144,11 +154,11 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 
 ## Testing
 
-* HTML5 Validator found an error about the weather icon image source attribute because there is no src attribute and links to the img element. I can not put a default link because the links dynamically change depending on the weather query. This was purposefully omitted on the HTML part because I use jQuery to push the src attribute to the img tag.
+1. HTML5 Validator found an error about the weather icon image source attribute because there is no src attribute and links to the img element. I can not put a default link because the links dynamically change depending on the weather query. This was purposefully omitted on the HTML part because I use jQuery to push the src attribute to the img tag.
 
     [Img Src Error](http://i65.tinypic.com/2hpn79f.jpg "Img Src Error")
 
-* Another error HTML5 Validator found was not having an alt attribute. I purposefully omitted this because it will always show on the page by default because weather icon only gets generated once the user clicks the "Show Weather" button.
+2. Another error HTML5 Validator found was not having an alt attribute. I purposefully omitted this because it will always show on the page by default because weather icon only gets generated once the user clicks the "Show Weather" button.
 
     [Img Alt Error](http://i68.tinypic.com/21kfjm8.jpg "Img Alt Error")
 
@@ -166,52 +176,80 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
     
     `$(".weatherIcon").attr("src", weatherIcon).fadeIn(2000);`
 
-* CSS3 Validator passed
+3. CSS3 Validator passed
 
     [CSS3 Validation](http://i65.tinypic.com/zmcbiq.jpg "CSS3 Validation")
 
-I ran all scripts at JSHint and these are the results:
+4. I ran all scripts at JSHint and these are the results:
 
-[Map JSHint](http://i68.tinypic.com/2el5nko.jpg)
+    [Map JSHint](http://i68.tinypic.com/2el5nko.jpg)
+    
+    [Weather JSHint](http://oi68.tinypic.com/14bi2kp.jpg)
+    
+    [getDate JSHint](http://oi64.tinypic.com/2wq4aom.jpg)
+    
+    [scrollUp JSHint](http://oi67.tinypic.com/30shmaw.jpg)
+    
+    [noIcon JSHint](http://oi65.tinypic.com/2by5ci.jpg)
+    
+5. The SPA is responsive on popular mobile devices. The layout of the SPA is the same for desktop view and tablet devices.
+    
+#### Manual Testing
 
-[Weather JSHint](http://i68.tinypic.com/14bi2kp.jpg)
+1. I typed a country on the text input field. I can see a dropdown list that's automatically generated by Google Places API. 
+    
+    1. I click one of the city listed and it automatically populates markers for accommodations.
+    2. I can also see table list with hotel names.
+    3. I can click the map marker and it bounces.
+    4. Then I can see an info window that has information about hotel name, address, telephone, customer rating and website information. If those information is not available then I don't see it in the info window.
+    5. I can also click on one of the hotel names listed on the table and it also shows an info window on the map. It's great to use when there's other markers overlapping each other. The bounce animation helps me see which one I clicked.
+    6. I click on the dropdown list and I can see it show the accurate markers for the type of establishment that I chose.
+    7. The appropriate icon is shown as well when I select attractions, bars, restaurants, stores or transportation.
+    8. When I choose an option in the dropdown list but there's no establishment like that in the area, I can see a pop up message (modal) that tells me, "Sorry! No result was found for this request."
+    9. I get to drag the map, read street signs, read establishment names and I get to find my bearings without any markers auto-populating. I like that it is not a distraction and if there's a particular establishment type I want to search, then I get to populate new markers as needed.
+    10. I can add a marker on the map to remember establishments that I want to visit. 
+    11. I can draw a line to make a route that I want to take.
+    12. I can also draw a circle, a shape or a rectangle to highlight the area that I need to remember.
+    13. I can click stop drawing and continue to pan and zoom the marker and check the map. The drawings will still be there.
+    14. I can take a screenshot and save that area of the map that I wanted to highlight.
+    15. When I search for a new city, the map drawings are gone.
+    16. On the top left I can switch to satellite view and hide labels.
+    17. I can also switch to terrain view when I choose map.
+    18. I can drop the pegman and see street view.
 
-[getDate JSHint](http://i64.tinypic.com/2wq4aom.jpg)
+2. I click "Show Weather" button and I can see the weather icon, weather description and temperature.
 
-[scrollUp JSHint](http://i67.tinypic.com/30shmaw.jpg)
+3. I typed "Dubai" on text field input and clicked "Show Weather" button and it gave me a message, "Weather Status: Unpredictable! The weather information is still brewing for that place."
 
-[noIcon JSHint](http://i65.tinypic.com/2by5ci.jpg)
+4. I click on the footer icons and each one opens to a new browser window.
+
+5. I click on the arrow button at the lower right corner and the browser scrolls up.
 
 #### Issues I Encountered:
 
-* Sometimes, the map will return zero results if there are no establishment of a certain type in the area that the user searched for. There could be no bars or tourist attractions, etc. The map displays no marker because there's nothing to show on the map.
+1. Sometimes, the map will return zero results if there are no establishment of a certain type in the area that the user searched for. There could be no bars or tourist attractions, etc. The map displays no marker because there's nothing to show on the map.
 
     [DevTools Console Map API Zero Result](http://i63.tinypic.com/rkoeol.jpg)
 
     My solution was to make a modal and show a message on the result table so the user knows that there's no information to show. If map query returns zero results, the user will see this message, “Sorry! No result was found for this request.”
     
-    [Google Map Zero Result Custom Message](http://i64.tinypic.com/34g8thd.jpg)
+    [Google Map Zero Result Custom Message](http://oi64.tinypic.com/34g8thd.jpg)
 
-* While testing the weather API I found 2 places that shows an error stating "404 Not Found". If user will type Dubai or Riyadh and click the 1st result option generated by google map API then click the "Show Weather Button" to show weather information, it does not show anything. These 2 places will return a "404 Not Found" in DevTools console.
+2. While testing the weather API I found 2 places that shows an error stating "404 Not Found". If user will type Dubai or Riyadh and click the 1st result option generated by google map API then click the "Show Weather Button" to show weather information, it does not show anything. These 2 places will return a "404 Not Found" in DevTools console.
 
     [Place Query Selector](http://i63.tinypic.com/nd35gy.jpg)
     
-    [DevTools Console 404 Not Found](http://tinypic.com/view.php?pic=znacmd&s=9)
+    [DevTools Console 404 Not Found](http://i63.tinypic.com/znacmd.jpg)
     
     If the user just types "Riyadh" in text field input and then clicks "Show Weather" button, it does display the right weather. This is a conflict I found between using weather API and google API.
     
-    [Weather API Successful Query](http://i67.tinypic.com/ke989v.jpg)
+    [Weather API Successful Query](http://oi67.tinypic.com/ke989v.jpg)
     
     My solution was to place a custom error message so the user knows that something happened when they click the "Show Weather" button and they will know that there's no weather information to show. They will see this custom message:
     
     “Weather Status: Unpredictable! The weather information is still brewing for that place.”
     
-    I am not sure what other place or city would return a "404 Not Found" result from weather API so it is best to have a custom error message shown so user is aware there's no information about it.
+    I am not sure what other place or city would return a "404 Not Found" result from weather API so I reckon it is best to have a custom error message shown so user is aware there's no information about it.
     
-    [Weather API Custom Error Message](http://i64.tinypic.com/jsewzn.jpg)
+    [Weather API Custom Error Message](http://http://i64.tinypic.com/jsewzn.jpg)
     
-
-
-
-
-

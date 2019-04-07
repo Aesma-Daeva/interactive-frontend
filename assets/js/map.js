@@ -9,6 +9,7 @@ var infoWindow;
 var autocomplete;
 var customIcon;
 var markers = [];
+var drawingManager;
 var MARKER_PATH = "https://developers.google.com/maps/documentation/javascript/images/marker_green";
 var hostnameRegexp = new RegExp("^https?://.+?/");
 
@@ -32,10 +33,31 @@ function initMap() {
     places = new google.maps.places.PlacesService(map);
 
     autocomplete.addListener("place_changed", onPlaceChanged);
-
+    
+    //Info window for map markers
     infoWindow = new google.maps.InfoWindow({
         content: document.getElementById("info-content")
     });
+    
+    //Drawing Controls
+    var drawingManager = new google.maps.drawing.DrawingManager({
+        drawingMode: google.maps.drawing.OverlayType.MARKER,
+        drawingControl: true,
+        drawingControlOptions: {
+            position: google.maps.ControlPosition.TOP_CENTER,
+            drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
+        },
+        markerOptions: { icon: './assets/images/icons/navigationIcon.png' },
+        circleOptions: {
+            fillColor: 'rgba(240, 127, 127, 0.7)',
+            fillOpacity: 1,
+            strokeWeight: 5,
+            clickable: false,
+            editable: true,
+            zIndex: 1
+        }
+    });
+    drawingManager.setMap(map);
 }
 
 //When the user selects a city, get the place details for the city and
