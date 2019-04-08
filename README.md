@@ -23,6 +23,7 @@ In this SPA, users will be able to do the following:
     * Restaurants
     * Stores
     * Public Transportations - Bus Stops and Tram Stations
+* User can also draw on the map to make their custom routes, markers or highlight areas they want to remember.
 * Users can also see the temperature for that city right at the current time they searched.
 * Users will also see the weather for that city at that specific time.
     
@@ -44,9 +45,9 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 8. Once the user types a city, the user can choose markers to show by clicking on the dropdown menu. User can choose accommodations, attractions, bars, restaurants, stores or transportation.
 9. User typed a city but there was no markers showing on the map if the user search for accommodations, bars, stores etc. This means there is no establishment like that on that particular place. User will see a pop up window (modal) that will show a message saying, "Sorry! No result was found for this request." and then user needs to click "Close" button to close the window. User can also see the same message on table where marker results show if there were anything to show. This lets the user know there is no information to show about that type of establishment.
 10. User moves the map. The markers don't automatically pop up. The user needs to click the dropdown menu again to show new markers for the information they want to see.
-11. User can see Google Map Drawing controls. User clicks "Add a marker" and puts it on the map.
-12. User also see other drawing control and click "Draw a line" to connect the map marker and the lines. User made a route to follow and took a screenshot.
-13. User clicked "Draw a Shape" on the drawing controls. User clicked "Attractions" and made markers of places that user wants to visit. User used "Draw a Shape" to mark the vicinity of places to visit. User then takes a screenshot to save the information.
+11. User can see Google Map Drawing controls. User clicks "Add a marker" and puts it on the map to remember that location.
+12. User also see other drawing control and click "Draw a line" to connect the map marker and the lines. User made a route to follow and took a screenshot using their mobile phone.
+13. User clicked "Draw a Shape" on the drawing controls. User clicked "Attractions" and made markers of places that user wants to visit. User used "Draw a Shape" to mark the vicinity of places to visit. User then takes a screenshot using their mobile phone to save the information.
 14. User searched for a new place. All drawing markers are gone.
 15. User searched for "Stores" then clicked "Draw a circle" on the drawing controls to highlight the store location.
 16. User then click "Draw a Line" on drawing controls  to mark a route to take to get to the store location.
@@ -123,6 +124,7 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 * Google Map Drawing is also enabled so user can draw their own route, add their own marker, highlight certain areas they want to remember and print it or take a screenshot of it.
 * The drawing controls will enable the user to add markers, draw a circle, draw a shape, draw a line, draw a rectangle and to also stop drawing.
 * The drawing will clear once the user chooses a different place.
+* There are no built-in screenshot key to press. The user needs to use their mobile phone's screenshot functionality to take a screenshot.
 
 #### Weather Features
 
@@ -322,6 +324,7 @@ That's all you need to change to get this up and running. :sunglasses:
 * [W3Schools](https://www.w3schools.com/)
 * [Slack](https://slack.com/)
 * [Github for Modal Issue](https://github.com/twbs/bootstrap/issues/24054)
+* [TinyPic for uploading images](http://tinypic.com/)
 
 ---
 
