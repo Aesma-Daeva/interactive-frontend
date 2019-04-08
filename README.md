@@ -256,7 +256,7 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
     
     I am not sure what other place or city would return a "404 Not Found" result from weather API so I reckon it is best to have a custom error message shown so user is aware there's no information about it.
     
-    [Weather API Custom Error Message](http://http://i64.tinypic.com/jsewzn.jpg)
+    [Weather API Custom Error Message](http://oi64.tinypic.com/jsewzn.jpg)
     
 3. When user searches for a place on the text input field and presses the enter key, nothing happens. It does not add markers on the map. The user really needs to choose from the drop down list that google generates. I tried solutions from here [Solution](https://stackoverflow.com/questions/7865446/google-maps-places-api-v3-autocomplete-select-first-option-on-enter) & [Another Solution](https://stackoverflow.com/questions/14601655/google-places-autocomplete-pick-first-result-on-enter-key?rq=1) but none of them worked either.
 
