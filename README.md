@@ -35,7 +35,7 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 ### User Stories
 
 1. User wants to search for a place to visit. The page asks user to type a city. User types a country, google map shows a dropdown list of places that have the keyword of places with that country name. User gets options of places mostly in the USA. User really needs to type a specific city to get accurate results.
-2. User types a particular city. User immediately sees map markers on the map showing accommodations and a table that shows a list that the user can click.
+2. User types a particular city. User pressed enter key, nothing happened. User clicks on the drop down list and chose a city, user immediately sees map markers on the map showing accommodations and a table that shows a list that the user can click.
 3. User clicks one of the hotels shown on the table. User can see a marker bouncing on the map. User knows that's the exact location of that hotel.
 4. User can also click on the map marker and it will also show an info window.
 5. User can see an info window with the hotel website, address, telephone number and rating for that place. This will all show in the info window if that information is available.
@@ -136,6 +136,7 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 * Make a map version using LeafletJS
 * Add images using Unsplash API
 * Add wind speed information to weather API
+* Figure out a way to make the enter key work when a user types a place
 
 ---
 
@@ -149,6 +150,8 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
 * [Font Awesome](https://fontawesome.com/ "Font Awesome") is used for the footer social media and website icons. Also for the scroll up button icon.
 * [Google Places API](https://developers.google.com/places/web-service/intro "Google Places API") for the map functionality
 * [OpenWeatherMap API](https://openweathermap.org/api "OpenWeatherMap API") for the weather information and JSON data
+* [Github](https://github.com/) for deploying my project :octocat:
+* [Animista](http://animista.net/ "Animista") for CSS text animation
 
 ---
 
@@ -253,3 +256,84 @@ Link to [Map and Weather API  Wireframe](https://github.com/Aesma-Daeva/map-weat
     
     [Weather API Custom Error Message](http://http://i64.tinypic.com/jsewzn.jpg)
     
+3. When user searches for a place on the text input field and presses the enter key, nothing happens. It does not add markers on the map. The user really needs to choose from the drop down list that google generates. I tried solutions from here [Solution](https://stackoverflow.com/questions/7865446/google-maps-places-api-v3-autocomplete-select-first-option-on-enter) & [Another Solution](https://stackoverflow.com/questions/14601655/google-places-autocomplete-pick-first-result-on-enter-key?rq=1) but none of them worked either.
+
+---
+
+## Deployment
+
+* This is deployed on Github. You can clone or download the repository from this [link](https://github.com/Aesma-Daeva/map-weather-api).
+
+* There are no differences between deployed version and development version.
+
+* Currently, there are no other branches but in the future, there will be a separate branch for rendering the map using LeafletJS.
+
+* Once you have downloaded all the files, open index.html and update this with your own API Key:
+
+    `<script src="https://maps.googleapis.com/maps/api/js?key=YOUR-API-KEY&libraries=places,drawing&callback=initMap" async></script>`
+
+* Once you have created a project and have an API Key, enable Places API and Maps JavaScript API in your Google Cloud Platform Console.
+
+    Read this: [Google API Key](https://developers.google.com/maps/documentation/javascript/get-api-key) to get your google API key. Warning! Google requires credit card information to get an API Key. 
+
+* Open weather.js and update this with your own App ID
+
+    `$.getJSON("https://api.openweathermap.org/data/2.5/weather?q=" + place + "&units=metric&appid=YOUR-OWN-APP-ID")`
+
+    Go here: [OpenWeatherMap API](https://openweathermap.org/api) to get a free App ID for the weather API. Just make an account and you'll get an API key  for free if you stay within the calls per minute limit.
+
+That's all you need to change to get this up and running. :sunglasses:
+
+---
+
+## Credits
+
+### Media
+
+* [Jumbotron Image](https://threadtripping.boardingarea.com/wp-content/uploads/2015/01/3121199491_e935b03f0b_b.jpg)
+* [Results Table Image](https://i.pinimg.com/474x/f7/5b/c7/f75bc7279146aecb06ff74b7133b654b--iphone-wallpaper-wanderlust.jpg)
+
+### Icons
+
+* [Map Icon](https://www.flaticon.com/free-icon/map_854878)
+* [Drawing Marker](https://www.flaticon.com/free-icon/navigation_709892#term=map%20marker&page=2&position=82)
+* [Accommodation](https://www.flaticon.com/free-icon/sleeping-bed-silhouette_8652)
+* [Attractions](https://www.flaticon.com/free-icon/photo_93182)
+* [Bar](https://www.freepik.com/free-icon/cocktail-drink-wine-glass_736515.htm)
+* [Restaurant](https://www.flaticon.com/free-icon/cutlery_1690025)
+* [Store](https://www.flaticon.com/free-icon/shopping-cart_2772#term=store&page=1&position=12)
+* [Transportation](https://www.flaticon.com/free-icon/front-bus_60741)
+
+### Footer Icons
+
+* [Github](https://fontawesome.com/icons/github?style=brands)
+* [LinkedIn](https://fontawesome.com/icons/linkedin?style=brands)
+* [Facebook](https://fontawesome.com/icons/facebook-square?style=brands)
+* [Twitter](https://fontawesome.com/icons/twitter?style=brands)
+* [Scroll Up Arrow](https://fontawesome.com/icons/arrow-circle-up?style=solid)
+
+### Other Sites Used
+
+* [HTML5 Validator](https://validator.w3.org/)
+* [CSS3 Validator](https://jigsaw.w3.org/css-validator/)
+* [JSHint](https://jshint.com/)
+* [MDn Web Docs](https://developer.mozilla.org/en-US/)
+* [Stackoverflow](https://stackoverflow.com/)
+* [W3Schools](https://www.w3schools.com/)
+* [Slack](https://slack.com/)
+* [Github for Modal Issue](https://github.com/twbs/bootstrap/issues/24054)
+
+---
+
+## Acknowledgements
+
+Thank you to:
+
+* [Code Institute](https://codeinstitute.net/) - My school for the comprehensive modules and the fun projects that tests our coding skills.
+
+* Code Institute's Student Care Team that's always ready to help and encourage students. They have been a great support. :blush:
+
+* My Mentor - Chris Zielinski for providing clarity and guidance when I'm feeling stuck. :muscle:
+
+* To everyone else's brains I've picked that helped me with this project - My hubby, Sean, Simen, Tim and Anna.
+Thanks for taking the time to review my project and giving me constructive feedback. :relieved: :beers:
