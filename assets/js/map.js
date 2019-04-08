@@ -47,7 +47,7 @@ function initMap() {
             position: google.maps.ControlPosition.TOP_CENTER,
             drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
         },
-        markerOptions: { icon: './assets/images/icons/navigationIcon.png' },
+        markerOptions: { icon: './assets/images/icons/navigation-icon.png' },
         circleOptions: {
             fillColor: 'rgba(240, 127, 127, 0.7)',
             fillOpacity: 1,
@@ -90,22 +90,22 @@ function search() {
             //assign a letter of the alphabet to each marker icon.
             for (var i = 0; i < results.length; i++) {
                 if (typeSelected == "lodging") {
-                    customIcon = "./assets/images/icons/accommodationIcon.png";
+                    customIcon = "./assets/images/icons/accommodation-icon.png";
                 }
                 else if (typeSelected == "museum") {
-                    customIcon = "./assets/images/icons/attractionsIcon.png";
+                    customIcon = "./assets/images/icons/attractions-icon.png";
                 }
                 else if (typeSelected == "bar") {
-                    customIcon = "./assets/images/icons/barIcon.png";
+                    customIcon = "./assets/images/icons/bar-icon.png";
                 }
                 else if (typeSelected == "restaurant") {
-                    customIcon = "./assets/images/icons/restaurantIcon.png";
+                    customIcon = "./assets/images/icons/restaurant-icon.png";
                 }
                 else if (typeSelected == "store") {
-                    customIcon = "./assets/images/icons/storeIcon.png";
+                    customIcon = "./assets/images/icons/store-icon.png";
                 }
                 else if (typeSelected == "transit_station") {
-                    customIcon = "./assets/images/icons/transportationIcon.png";
+                    customIcon = "./assets/images/icons/transportation-icon.png";
                 }
                 //Use marker animation to drop the icons incrementally on the map.
                 markers[i] = new google.maps.Marker({
